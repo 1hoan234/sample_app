@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  def create
+  def create # rubocop:disable Metrics/AbcSize
     user = User.find_by email: params.dig(:session, :email)&.downcase
     if user.try(:authenticate, params.dig(:session, :password))
       # Log the user in and redirect to the user's show page.
@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
       log_in user
       params.dig(:session, :remember_me) == "1" ? remember(user) : forget(user)
       redirect_to user, status: :see_other
+      redirect_back_or user
     else
       # Create an error message.
       flash.now[:danger] = t "invalid_email_password_combination"
