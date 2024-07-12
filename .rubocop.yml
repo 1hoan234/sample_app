@@ -12,6 +12,7 @@ inherit_from:
 # Common configuration.
 AllCops:
   # Include gemspec and Rakefile
+  NewCops: enable
   SuggestExtensions: false
   Include:
     - 'app/**/*'
@@ -282,7 +283,7 @@ Style/LambdaCall:
     - call
     - braces
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 80
   AllowURI: true
   Exclude:
