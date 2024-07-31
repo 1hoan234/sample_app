@@ -1,0 +1,11 @@
+vi:
+  activerecord:
+    models:
+      user: "Người dùng"
+    attributes:
+      user:
+        name: "Tên"
+        email: "Email"
+        password: "Mật Khẩu"
+    sign_up: "Sign up"
+    create_my_account: "Create my account"
