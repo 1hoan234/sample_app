@@ -11,8 +11,20 @@ class User < ApplicationRecord
 
   after_update :run_call_back_update
 
-  private
+  def self.digest string
+    cost = if ActiveModel::SecurePassword.min_cost
+             BCrypt::Engine::MIN_COST
+           else
+             BCrypt::Engine.cost
+           end
+    BCrypt::Password.create string, cost: costend
+  end
 
+  def run_call_back_update
+    Rails.logger.debug "callback after update"
+  end
+
+  private
   def downcase_email
     email.downcase!
   end

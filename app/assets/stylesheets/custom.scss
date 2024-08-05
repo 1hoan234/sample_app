@@ -13,6 +13,7 @@ section {
 
 textarea {
   resize: vertical;
+  text-decoration: none;
 }
 
 .center {
@@ -99,4 +100,25 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+nav {
+  height: 60px;
+
+}
+
+.navbar {
+  background-color: #000; /* Màu đen */
+}
+
+td {
+  padding: 5px;
+  text-align: center;
+  input {
+    color: $state-danger-text;
+  }
+}
+
+/* Dropdown menu */
+.dropdown-menu.active {
+  display: block;
 }

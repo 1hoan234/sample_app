@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
   resources :products
   get 'demo_partials/new'
   get 'demo_partials/edit'
@@ -9,7 +12,9 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   resources :users, only: %i(new create show)
   # Defines the root path route ("/")
-  
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
   root "static_pages#home"
   scope "(:locale)", locale: /en|vi/ do
     resources :microposts
