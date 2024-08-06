@@ -35,3 +35,10 @@
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
+
+# Ignore node_modules directory
+node_modules/
+
+package.json
+
+yarn.lock

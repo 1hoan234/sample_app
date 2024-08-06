@@ -3,11 +3,9 @@
     <div class="alert alert-danger">
       <%= t "the_form_contains" %>
       <%= pluralize @user.errors.count, "error" %>.
+      <%= t ("views.shared.errors.the_form_contains") %>
+      <%= pluralize @user.errors.count,
+      t("views.shared.errors.error") %>.
     </div>
     <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %>
-      </li><% end %>
-    </ul>
-  </div>
-<% end %>
+    <% @user.errors.full_messages.each do |msg| %>

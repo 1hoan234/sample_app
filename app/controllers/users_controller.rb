@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       # some
+      reset_session
+      log_in @user
       redirect_to @user, status: :see_other
       flash[:success] = t "User was successfully created"
     else
