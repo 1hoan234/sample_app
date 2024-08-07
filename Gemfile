@@ -37,6 +37,7 @@ gem "faker", "2.21.0"
 gem "figaro"
 gem "pagy"
 gem "rails-i18n"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html]
 gem "bcrypt", "3.1.18"
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
