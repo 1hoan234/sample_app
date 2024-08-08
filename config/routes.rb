@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/edit'
+  get 'password_resets/create'
+  get 'password_resets/update'
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -11,6 +15,7 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
   resources :users
+  resources :password_resets, only: %i(new create edit update)
   resources :account_activations, only: :edit
   # Defines the root path route ("/")
   get "/login", to: "sessions#new"
